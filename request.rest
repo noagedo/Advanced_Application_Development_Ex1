@@ -3,3 +3,41 @@ GET http://localhost:3000/posts
 
 
 ###
+# Create a comment
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+  "postId": "64b1f69b4f1a25673e18b521",
+  "content": "This is a test comment.",
+  "sender": "Yuvalben ",
+  "createdAt": "2021-08-01T12:00:00.000Z"
+
+}
+
+
+###
+
+# Get all comments
+GET http://localhost:3000/comments
+
+###
+
+# Get comments by post ID
+GET http://localhost:3000/comments/64b1f69b4f1a25673e18b642
+
+###
+
+# Update a comment
+PUT http://localhost:3000/comments/673d95d9e84ed1bf0bba7ba2
+Content-Type: application/json
+
+{
+  "content": "This is an updated comment.",
+  "sender": "UpdatedUser"
+}
+
+###
+
+# Delete a comment
+DELETE http://localhost:3000/comments/673d9786bbfbbd848bdfb1ff
