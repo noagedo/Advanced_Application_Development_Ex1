@@ -3,52 +3,76 @@ GET http://localhost:3000/posts
 
 
 ###
-
+# Add a new post
 POST http://localhost:3000/posts
 Content-Type: application/json
 
 {
-    "sender": "Noa Gedo",
-    "content": "This is my first post!"
+  "title": "My First Post",
+  "content": "This is the content of the first post.",
+  "sender": "Noa"
 }
 
-###
-
-GET http://localhost:3000/posts/6737612e9eae9436fc809d5c
-Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/posts?sender=Noa%20Gedo
-Content-Type: application/json
+# Get a post by ID
+GET http://localhost:3000/posts/67443b63403364e20bdcb8ad
+
 ###
 
-PUT http://localhost:3000/posts/6737612e9eae9436fc809d5c
+GET http://localhost:3000/sender?sender=Noa
+
+
+###
+
+# Update a post by ID
+PUT http://localhost:3000/posts/67443b63403364e20bdcb8ad
 Content-Type: application/json
 
 {
-    "title": "Updated Title",
-    "content": "Updated content of the post"
+  "title": "Updated Post Title",
+  "content": "Updated content for the post."
 }
 
 ###
-
+# Create a comment
 POST http://localhost:3000/comments
 Content-Type: application/json
 
 {
-  "postId": "607d1f77bcf86cd799439011"
+  "postId": "64b1f69b4f1a25673e18b521",
+  "content": "This is a test comment.",
+  "sender": "Yuvalben ",
+  "createdAt": "2021-08-01T12:00:00.000Z"
+
 }
 
+
 ###
- 
- POST http://localhost:3000/comments
+
+# Get all comments
+GET http://localhost:3000/comments
+
+###
+
+# Get comments by post ID
+GET http://localhost:3000/comments/64b1f69b4f1a25673e18b521
+
+###
+
+# Update a comment
+PUT http://localhost:3000/comments/673b5543c2a46149f9188f7f
 Content-Type: application/json
 
 {
-  "postId": "607d1f77bcf86cd799439012",
-  "content": "This is a test comment.",
-  "sender": "Yuvalben shitrit",
-  "createdAt": "2021-08-01T12:00:00.000Z"
+  "content": "This is an updated comment.",
+  "sender": "UpdatedUser"
 }
+
+###
+
+# Delete a comment
+DELETE http://localhost:3000/comments/673d9786bbfbbd848bdfb1ff
+
 ###
