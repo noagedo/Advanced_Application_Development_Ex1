@@ -3,3 +3,52 @@ GET http://localhost:3000/posts
 
 
 ###
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "sender": "Noa Gedo",
+    "content": "This is my first post!"
+}
+
+###
+
+GET http://localhost:3000/posts/6737612e9eae9436fc809d5c
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/posts?sender=Noa%20Gedo
+Content-Type: application/json
+###
+
+PUT http://localhost:3000/posts/6737612e9eae9436fc809d5c
+Content-Type: application/json
+
+{
+    "title": "Updated Title",
+    "content": "Updated content of the post"
+}
+
+###
+
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+  "postId": "607d1f77bcf86cd799439011"
+}
+
+###
+ 
+ POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+  "postId": "607d1f77bcf86cd799439012",
+  "content": "This is a test comment.",
+  "sender": "Yuvalben shitrit",
+  "createdAt": "2021-08-01T12:00:00.000Z"
+}
+###
